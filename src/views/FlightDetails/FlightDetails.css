@@ -1,0 +1,15 @@
+.flightDetailsRoot {
+  display: flex;
+}
+
+.goBackButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.galleryContainer {
+  display: flex;
+  overflow-x: auto;
+  height: 600px;
+  max-width: 600px;
+}

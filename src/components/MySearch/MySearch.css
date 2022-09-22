@@ -1,0 +1,20 @@
+.mySearchInput {
+  color: #0e0e10;
+  padding: 10px;
+  background: #0000000d;
+  border: none;
+}
+
+.mySearchRoot {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.mySearchRoot > * {
+  margin-left: 8px;
+}
+
+::placeholder {
+  opacity: 0.5;
+}

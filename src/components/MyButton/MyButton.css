@@ -1,0 +1,25 @@
+.myButton {
+  display: inline-block;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 13px;
+  height: 36px;
+  background-color: #0000000d;
+  color: #0e0e10;
+  padding: 0 10px;
+}
+
+.myButton:hover {
+  opacity: 0.6;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.myButton:disabled {
+  background-color: #0000000c;
+  color: #0e0e101a;
+}
