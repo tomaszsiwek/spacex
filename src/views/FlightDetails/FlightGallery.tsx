@@ -1,5 +1,5 @@
 import MyPagination from "components/MyPagination";
-import { useState } from "react";
+// import { useState } from "react";
 
 interface FlightGalleryProps {}
 
@@ -24,7 +24,7 @@ const images = [
 ];
 
 const FlightGallery: React.FunctionComponent<FlightGalleryProps> = () => {
-  const [imgIndex, setImgIndex] = useState(0);
+  // const [imgIndex, setImgIndex] = useState(0);
 
   return (
     <>

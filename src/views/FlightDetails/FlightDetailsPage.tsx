@@ -1,28 +1,28 @@
-import { gql, useQuery } from "@apollo/client";
+// import { gql, useQuery } from "@apollo/client";
 import FlightDetails from "./FlightDetails";
 import MyButton from "components/MyButton";
 import "./FlightDetails.css";
 
-const FLIGHT_LIST_QUERY = gql`
-  query GetLaunchDetails {
-    launchesPast(limit: 10, sort: "launch_date_local", order: "asc") {
-      id
-      launch_date_local
-      launch_site {
-        site_name_long
-      }
-      mission_name
-      rocket {
-        rocket_name
-      }
-      ships {
-        name
-        home_port
-        image
-      }
-    }
-  }
-`;
+// const FLIGHT_LIST_QUERY = gql`
+//   query GetLaunchDetails {
+//     launchesPast(limit: 10, sort: "launch_date_local", order: "asc") {
+//       id
+//       launch_date_local
+//       launch_site {
+//         site_name_long
+//       }
+//       mission_name
+//       rocket {
+//         rocket_name
+//       }
+//       ships {
+//         name
+//         home_port
+//         image
+//       }
+//     }
+//   }
+// `;
 
 type Props = {
   onBackClick: () => void;
