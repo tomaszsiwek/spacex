@@ -30,6 +30,7 @@ const FLIGHT_LIST_QUERY = gql`
           site_name_long
         }
         mission_name
+        launch_success
         rocket {
           rocket_name
         }

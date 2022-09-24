@@ -13,6 +13,7 @@ export default function FlightList({ launches, onDetailSelect }: Props) {
       <thead>
         <tr>
           <th>Flight information</th>
+          <th>Launch success</th>
           <th>More</th>
         </tr>
       </thead>

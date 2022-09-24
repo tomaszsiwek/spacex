@@ -5,6 +5,7 @@ export type Launch = {
     site_name_long: string;
   };
   mission_name: string;
+  launch_success: boolean;
   rocket: {
     rocket_name: string;
   };

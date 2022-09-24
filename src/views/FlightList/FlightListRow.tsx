@@ -1,6 +1,7 @@
 import { Launch } from "./FlightListTypes";
 import React from "react";
 import MyButton from "components/MyButton";
+import { CheckIcon } from "components/MyIcons";
 
 interface MobileTableProps {
   launch: Launch;
@@ -27,6 +28,7 @@ const MobileTable: React.FunctionComponent<MobileTableProps> = ({
           <strong>Rocket:</strong> {launch.rocket.rocket_name}
         </div>
       </td>
+      <td>{launch.launch_success && <CheckIcon />}</td>
       <td>
         <MyButton onClick={() => onFlightSelect(launch.id)} label="Details" />
       </td>
