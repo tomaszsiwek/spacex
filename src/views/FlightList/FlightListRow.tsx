@@ -1,43 +1,34 @@
-// import { Launch } from "./FlightListTypes";
+import { Launch } from "./FlightListTypes";
 import React from "react";
 import MyButton from "components/MyButton";
 
 interface MobileTableProps {
-  id: string;
-  mission: string;
-  date: string;
-  siteName: string;
-  shipName?: string;
+  launch: Launch;
   onFlightSelect: (value: string) => void;
 }
 
 const MobileTable: React.FunctionComponent<MobileTableProps> = ({
-  id,
-  mission,
-  date,
-  siteName,
-  shipName,
+  launch,
   onFlightSelect,
 }) => {
   return (
     <tr>
       <td>
         <div>
-          <strong>Mission:</strong> {mission}
+          <strong>Mission:</strong> {launch.mission_name}
         </div>
         <div>
-          <strong>Date:</strong> {date}
+          <strong>Date:</strong> {launch.launch_date_local}
         </div>
         <div>
-          <strong>Site:</strong> {siteName}
+          <strong>Site:</strong> {launch.launch_site.site_name_long}
         </div>
         <div>
-          <strong>Ship name:</strong> {shipName}
+          <strong>Rocket:</strong> {launch.rocket.rocket_name}
         </div>
       </td>
-      <td>picture</td>
       <td>
-        <MyButton onClick={() => onFlightSelect(id)} label="Details" />
+        <MyButton onClick={() => onFlightSelect(launch.id)} label="Details" />
       </td>
     </tr>
   );

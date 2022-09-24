@@ -1,9 +1,3 @@
-export type Ship = {
-  name: string;
-  home_port: string;
-  image: string;
-};
-
 export type Launch = {
   id: string;
   launch_date_local: string;
@@ -14,5 +8,4 @@ export type Launch = {
   rocket: {
     rocket_name: string;
   };
-  ships: Ship[];
 };

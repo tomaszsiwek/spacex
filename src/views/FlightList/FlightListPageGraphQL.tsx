@@ -33,11 +33,6 @@ const FLIGHT_LIST_QUERY = gql`
         rocket {
           rocket_name
         }
-        ships {
-          name
-          home_port
-          image
-        }
       }
     }
   }
@@ -71,7 +66,7 @@ export default function FlightListPageGraphQL({ onDetailSelect }: Props) {
   };
 
   return (
-    <>
+    <div className="flightsListRoot">
       <h2>Launch list</h2>
       <FlightListFilters value={filter} onApplyFilters={onApplyFilters} />
       {loading ? (
@@ -90,6 +85,6 @@ export default function FlightListPageGraphQL({ onDetailSelect }: Props) {
           )}
         </>
       )}
-    </>
+    </div>
   );
 }

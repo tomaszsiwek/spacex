@@ -13,23 +13,17 @@ export default function FlightList({ launches, onDetailSelect }: Props) {
       <thead>
         <tr>
           <th>Flight information</th>
-          <th>Picture</th>
           <th>More</th>
         </tr>
       </thead>
       <tbody>
-        {launches?.map(
-          ({ id, mission_name, launch_date_local, launch_site, ships }) => (
-            <LaunchRow
-              onFlightSelect={onDetailSelect}
-              key={id}
-              id={id}
-              mission={mission_name}
-              date={launch_date_local}
-              siteName={launch_site.site_name_long}
-            />
-          )
-        )}
+        {launches?.map((launch) => (
+          <LaunchRow
+            onFlightSelect={onDetailSelect}
+            key={launch.id}
+            launch={launch}
+          />
+        ))}
       </tbody>
     </table>
   );
