@@ -66,7 +66,7 @@ export default function FlightListPageGraphQL({ onDetailSelect }: Props) {
   };
 
   return (
-    <div className="flightsListRoot">
+    <div className="flightListRoot">
       <h2>Launch list</h2>
       <FlightListFilters value={filter} onApplyFilters={onApplyFilters} />
       {loading ? (
