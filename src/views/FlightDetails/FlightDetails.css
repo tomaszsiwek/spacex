@@ -1,5 +1,7 @@
 .flightDetailsRoot {
-  display: flex;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .goBackButtonContainer {
@@ -8,8 +10,58 @@
 }
 
 .galleryContainer {
+  max-height: 400px;
+  width: 100%;
   display: flex;
+}
+
+ul.images {
+  overflow-y: hidden;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
   overflow-x: auto;
-  height: 600px;
-  max-width: 600px;
+  background-color: #ddd;
+}
+ul.images li {
+  display: inline;
+}
+
+.img {
+  height: 100%;
+}
+
+.basicInfoItem {
+  grid-area: basicInfo;
+}
+.payloadItem {
+  grid-area: payload;
+}
+.galleryItem {
+  min-width: 0;
+  grid-area: gallery;
+}
+.videoItem {
+  min-width: 0;
+  grid-area: video;
+}
+
+.mainGrid {
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "basicInfo"
+    "payload"
+    "gallery"
+    "video";
+}
+
+@media (min-width: 600px) {
+  .mainGrid {
+    grid-template-areas:
+      "basicInfo payload"
+      "gallery gallery"
+      "video video";
+  }
 }

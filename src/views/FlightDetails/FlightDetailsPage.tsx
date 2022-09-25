@@ -1,47 +1,66 @@
-// import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 import FlightDetails from "./FlightDetails";
 import MyButton from "components/MyButton";
+import MyLoader from "components/MyLoader";
+import MyError from "components/MyLoader";
 import "./FlightDetails.css";
+import { Launch } from "../Types";
 
-// const FLIGHT_LIST_QUERY = gql`
-//   query GetLaunchDetails {
-//     launchesPast(limit: 10, sort: "launch_date_local", order: "asc") {
-//       id
-//       launch_date_local
-//       launch_site {
-//         site_name_long
-//       }
-//       mission_name
-//       rocket {
-//         rocket_name
-//       }
-//       ships {
-//         name
-//         home_port
-//         image
-//       }
-//     }
-//   }
-// `;
+const FLIGHT_DETAILS_QUERY = gql`
+  query GetLaunchDetails($id: ID!) {
+    launch(id: $id) {
+      id
+      launch_date_local
+      launch_site {
+        site_name_long
+      }
+      mission_name
+      rocket {
+        rocket_name
+        second_stage {
+          payloads {
+            payload_type
+            payload_mass_kg
+          }
+        }
+      }
+      launch_success
+      links {
+        flickr_images
+        video_link
+      }
+    }
+  }
+`;
 
 type Props = {
+  id: string;
   onBackClick: () => void;
 };
 
-export default function FlightDetailsPage({ onBackClick }: Props) {
-  // const { loading, data } = useQuery(FLIGHT_LIST_QUERY);
-
-  // if (loading) {
-  //   return <>Loading...</>;
-  // }
+export default function FlightDetailsPage({ onBackClick, id }: Props) {
+  const { loading, error, data } = useQuery<{ launch: Launch }>(
+    FLIGHT_DETAILS_QUERY,
+    {
+      variables: {
+        id,
+      },
+    }
+  );
 
   return (
-    <>
+    <div className="flightDetailsRoot">
       <h2>Flight details</h2>
       <div className="goBackButtonContainer">
         <MyButton label="GO BACK" onClick={onBackClick} />
       </div>
-      <FlightDetails />
-    </>
+      {loading ? (
+        <MyLoader />
+      ) : error ? (
+        <MyError />
+      ) : (
+        <FlightDetails launch={data.launch} />
+      )}
+    </div>
   );
 }

@@ -12,7 +12,10 @@ function App() {
           onDetailSelect={(value) => setSelectedFlight(value)}
         />
       ) : (
-        <FlightDetailsPage onBackClick={() => setSelectedFlight(null)} />
+        <FlightDetailsPage
+          id={selectedFlight}
+          onBackClick={() => setSelectedFlight(null)}
+        />
       )}
     </>
   );

@@ -1,22 +1,30 @@
-interface FlightBasicInfoProps {}
+import { Launch } from "../Types";
+import { CheckIcon, TimesIcon } from "components/MyIcons";
 
-const FlightBasicInfo: React.FunctionComponent<FlightBasicInfoProps> = () => {
+interface FlightBasicInfoProps {
+  launch: Launch;
+}
+
+const FlightBasicInfo: React.FunctionComponent<FlightBasicInfoProps> = ({
+  launch,
+}) => {
   return (
     <div>
       <div>
-        <strong>Mission:</strong> mission
+        <strong>Mission:</strong> {launch.mission_name}
       </div>
       <div>
-        <strong>Date:</strong> date
+        <strong>Date:</strong> {launch.launch_date_local}
       </div>
       <div>
-        <strong>Site:</strong> siteName
+        <strong>Site:</strong> {launch.launch_site.site_name_long}
       </div>
       <div>
-        <strong>Rocket:</strong> shipName
+        <strong>Rocket:</strong> {launch.rocket.rocket_name}
       </div>
       <div>
-        <strong>Launch success:</strong> shipName
+        <strong>Success:</strong>
+        {launch.launch_success ? <CheckIcon /> : <TimesIcon />}
       </div>
     </div>
   );

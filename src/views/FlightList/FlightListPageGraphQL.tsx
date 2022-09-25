@@ -5,7 +5,7 @@ import FlightListFilters from "./FlightListFilters";
 import MyPagination from "components/MyPagination";
 import MyLoader from "components/MyLoader";
 import MyError from "components/MyLoader";
-import { Launch } from "./FlightListTypes";
+import { Launch } from "../Types";
 
 const FLIGHT_LIST_QUERY = gql`
   query GetPastLaunchesTotalCount(

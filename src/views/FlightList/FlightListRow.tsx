@@ -1,4 +1,4 @@
-import { Launch } from "./FlightListTypes";
+import { Launch } from "../Types";
 import React from "react";
 import MyButton from "components/MyButton";
 import { CheckIcon } from "components/MyIcons";

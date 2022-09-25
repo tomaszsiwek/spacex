@@ -1,15 +1,19 @@
-interface FlightVideoProps {}
+interface FlightVideoProps {
+  src: string;
+}
 
-const FlightVideo: React.FunctionComponent<FlightVideoProps> = () => {
+const FlightVideo: React.FunctionComponent<FlightVideoProps> = ({ src }) => {
+  if (!src) {
+    return null;
+  }
+
   return (
-    <>
-      <iframe
-        title="aaa"
-        width="420"
-        height="315"
-        src="https://www.youtube.com/embed/tgbNymZ7vqY"
-      ></iframe>
-    </>
+    <iframe
+      title="Launch video"
+      width="100%"
+      height="400"
+      src={src.replace("watch?v=", "embed/")}
+    ></iframe>
   );
 };
 
