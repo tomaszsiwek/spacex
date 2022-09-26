@@ -13,7 +13,7 @@ const MyButton: React.FunctionComponent<MyButtonProps> = ({
   disabled = false,
 }) => {
   return (
-    <button disabled={disabled} onClick={onClick} className="muButton">
+    <button disabled={disabled} onClick={onClick} className="myButton">
       {label}
     </button>
   );
