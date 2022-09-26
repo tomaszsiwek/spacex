@@ -67,12 +67,14 @@ const mocks = [
   },
 ];
 
-test("renders loader", async () => {
-  const { findByText, getByText } = render(
-    <MockedProvider mocks={mocks} addTypename={false}>
-      <App />
-    </MockedProvider>
-  );
-  expect(getByText("Loading...")).toBeInTheDocument();
-  expect(await findByText("GPS III SV01")).toBeInTheDocument();
+describe("App", () => {
+  test("renders App with mocked data", async () => {
+    const { findByText, getByText } = render(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <App />
+      </MockedProvider>
+    );
+    expect(getByText("Loading...")).toBeInTheDocument();
+    expect(await findByText("GPS III SV01")).toBeInTheDocument();
+  });
 });
