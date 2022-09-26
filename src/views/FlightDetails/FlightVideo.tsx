@@ -12,7 +12,9 @@ const FlightVideo: React.FunctionComponent<FlightVideoProps> = ({ src }) => {
       title="Launch video"
       width="100%"
       height="400"
-      src={src.replace("watch?v=", "embed/")}
+      src={src
+        .replace("youtu.be/", "youtube.com/watch?v=")
+        .replace("watch?v=", "embed/")}
     ></iframe>
   );
 };

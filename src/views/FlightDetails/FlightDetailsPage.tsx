@@ -52,7 +52,7 @@ export default function FlightDetailsPage({ onBackClick, id }: Props) {
     <div className="flightDetailsRoot">
       <h2>Flight details</h2>
       <div className="goBackButtonContainer">
-        <MyButton label="GO BACK" onClick={onBackClick} />
+        <MyButton label="Back" onClick={onBackClick} />
       </div>
       {loading ? (
         <MyLoader />
