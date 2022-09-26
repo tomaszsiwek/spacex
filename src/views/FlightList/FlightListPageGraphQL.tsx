@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import FlightList from "./FlightList";
 import FlightListFilters from "./FlightListFilters";
