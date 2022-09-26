@@ -7,7 +7,7 @@ import MyLoader from "components/MyLoader";
 import MyError from "components/MyLoader";
 import { Launch } from "../Types";
 
-const FLIGHT_LIST_QUERY = gql`
+export const FLIGHT_LIST_QUERY = gql`
   query GetPastLaunchesTotalCount(
     $mission_name: String
     $offset: Int
