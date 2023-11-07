@@ -17,7 +17,7 @@ const FlightBasicInfo: React.FunctionComponent<FlightBasicInfoProps> = ({
         <strong>Date:</strong> {launch.launch_date_local}
       </div>
       <div>
-        <strong>Site:</strong> {launch.launch_site.site_name_long}
+        <strong>Site:</strong> {launch.launch_site?.site_name_long}
       </div>
       <div>
         <strong>Rocket:</strong> {launch.rocket.rocket_name}

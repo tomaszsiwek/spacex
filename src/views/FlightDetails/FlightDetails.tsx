@@ -15,7 +15,7 @@ export default function FlightDetails({ launch }: Props) {
         <FlightBasicInfo launch={launch} />
       </div>
       <div className="payloadItem">
-        <FlightPayload payloads={launch.rocket.second_stage.payloads} />
+        {/* <FlightPayload payloads={launch.rocket.second_stage.payloads} /> */}
       </div>
       <div className="galleryItem">
         <FlightGallery images={launch.links?.flickr_images} />
